@@ -1,5 +1,5 @@
+import Page from '../components/Page';
+
 export default function IndexPage() {
-  return (
-    <p>Howdy</p>
-  )
+  return <p>Howdy from Index</p>;
 }
