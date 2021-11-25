@@ -9,6 +9,7 @@ export default function Header() {
     setIsMobileNavHidden(!isMobileNavHidden);
     const nav = document.querySelector('.nav');
     nav.classList.toggle('is-showing');
+    document.querySelector('.overlay').classList.toggle('is-showing');
   };
 
   return (
@@ -20,6 +21,7 @@ export default function Header() {
       <Link href='/'>
         <a className='logo'>homeGoods</a>
       </Link>
+      <div className="overlay"></div>
       <nav className='nav'>
         <ul>
           <li className='nav-item'>

@@ -10,7 +10,7 @@
 
 .burger-btn
   z-index: 10
-  @media (min-width: 768px) 
+  @media (min-width: 768px)
     display: none
 
 .logo
@@ -20,14 +20,16 @@
   color: $darkblue
 
 .nav
-  display: none
+  transition: all 200ms ease-in
   @media (max-width: 767px)
+    visibility: hidden
     height: 100vh
-    outline: 1px solid blue
+    background: $offwhite
     position: absolute
     top: 0
     left: 0
-  @media (min-width: 768px) 
+    transform: translateX(-100%)
+  @media (min-width: 768px)
     display: inline-block
   ul
     display: flex
@@ -44,3 +46,14 @@
     @media (max-width: 767px)
       padding: 2em
       margin: 1em
+
+.overlay
+  visibility: hidden
+  transition: all 200ms ease-in
+  position: absolute
+  background: hsla(0, 0%, 0%, 0.5)
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  z-index: -10
