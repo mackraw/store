@@ -1,0 +1,35 @@
+.products-list
+  display: grid
+  grid-template-columns: 1fr
+  grid-gap: clamp(20px, calc(0.5em + 3vw), 90px)
+  margin: 5vh 5vw
+  @media screen and (min-width: 600px)
+    grid-template-columns: 1fr 1fr
+
+.product
+  font-size: clamp(1.2rem, 0.5em + 2vw, 2rem)
+  // font-size: 1.4rem
+  padding: 5%
+  border-radius: 0.5em
+  box-shadow: 0 0 20px $gray
+
+.product-image
+  display: block
+  width: 100%
+  border-radius: 0.5em
+  height: auto
+  object-fit: cover
+
+.product-title
+  margin-top: $productMargin
+  font-size: clamp(1.8rem, 0.5em + 3vw, 2.4rem)
+
+.product-description
+  margin-top: $productMargin
+  font-size: clamp(1.2rem, 0.3em + 2vw, 1.5rem)
+  line-height: 1.4
+
+.product-price
+  margin-top: $productMargin
+
+.product-btn
