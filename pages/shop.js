@@ -1,3 +1,5 @@
+import Shop from '../components/Shop';
+
 export default function ShopPage() {
-  return <p>Howdy from Shop page</p>;
+  return <Shop />;
 }

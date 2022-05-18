@@ -1,7 +1,8 @@
-import Page from "../components/Page";
-import "./../components/styles/main.sass";
-import { ApolloProvider } from "@apollo/client";
-import withData from "../lib/withData";
+import PropTypes from 'prop-types';
+import { ApolloProvider } from '@apollo/client';
+import Page from '../components/Page';
+import '../components/styles/main.sass';
+import withData from '../lib/withData';
 
 function MyApp({ Component, pageProps, apollo }) {
   return (
@@ -23,3 +24,9 @@ MyApp.getInitialProps = async function ({ Component, ctx }) {
 };
 
 export default withData(MyApp);
+
+MyApp.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object,
+  apollo: PropTypes.object,
+};

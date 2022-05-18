@@ -1,11 +1,15 @@
-import Header from "./Header";
+import propTypes from 'prop-types';
+import Header from './Header';
 
 export default function Page({ children }) {
   return (
     <>
       <Header />
-      <p>Howdy from Page page</p>
       {children}
     </>
   );
 }
+
+Page.propTypes = {
+  children: propTypes.object,
+};
