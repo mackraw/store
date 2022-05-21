@@ -1,0 +1,35 @@
+.quantity-control
+  height: 3rem
+  // margin: 0.5em
+  color: $darkblue
+
+.qtyNum
+  font-family: Poppins, sans-serif
+  width: 3em
+  text-align: center
+  height: 100%
+  padding: 0.5em
+  border: 2px solid $darkblue
+  border-left-width: 1px
+  border-right-width: 1px
+
+$qtyCtrlCorners: 0.25em
+.qtyBtn
+  font-family: Poppins, sans-serif
+  border: 2px solid $darkblue
+  height: 100%
+  width: 3rem
+  background-color: transparent
+  cursor: pointer
+  transition: $tr
+  &:hover
+    background-color: $darkblue
+    color: white
+  &[data-operation="increment"]
+    border-left-width: 1px
+    border-top-right-radius: $qtyCtrlCorners
+    border-bottom-right-radius: $qtyCtrlCorners
+  &[data-operation="decrement"]
+    border-right-width: 1px
+    border-top-left-radius: $qtyCtrlCorners
+    border-bottom-left-radius: $qtyCtrlCorners

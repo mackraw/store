@@ -11,8 +11,12 @@
   // font-size: 1.4rem
   padding: 5%
   border-radius: 0.5em
-  box-shadow: 0 0 20px $gray
+  box-shadow: 0 0 20px $transparent-gray
 
+.product-category
+  margin: 1em 0
+  font-size: 0.75em
+  text-transform: capitalize
 .product-image
   display: block
   width: 100%
@@ -24,12 +28,44 @@
   margin-top: $productMargin
   font-size: clamp(1.8rem, 0.5em + 3vw, 2.4rem)
 
+.title-link
+  color: $black
+  text-decoration: none
+  border-bottom: 2px solid transparent
+  transition: $tr
+  &:hover
+    // color: $blue-900
+    border-bottom-color: $black
+
+.image-link
+  cursor: pointer
+
 .product-description
   margin-top: $productMargin
   font-size: clamp(1.2rem, 0.3em + 2vw, 1.5rem)
   line-height: 1.4
 
-.product-price
+.bottom-row
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: center
   margin-top: $productMargin
 
+.product-price
+.cardBtn
+  font-size: 0.6em
+
 .product-btn
+  text-transform: uppercase
+  padding: 0.5em 1em
+  cursor: pointer
+  border: 2px solid $darkblue
+  color: $offwhite
+  background-color: $darkblue
+  font-weight: 600
+  border-radius: 0.35em
+  transition: $tr
+  &:hover
+    color: $darkblue
+    background-color: white
