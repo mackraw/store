@@ -4,7 +4,9 @@ import Head from 'next/head';
 import propTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney';
 import CartBtn from './CartBtn';
+import ProductTrack from './ProductTrack';
 import QuantityControl from './QuantityControl';
+import StarRating from './StarRating';
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -14,6 +16,7 @@ const SINGLE_ITEM_QUERY = gql`
       description
       id
       price
+      rating
       category
       photo {
         id
@@ -50,7 +53,9 @@ export default function ProductPage({ id }) {
         <div className="single-product-details">
           <h3 className="single-product-category">{Product.category}</h3>
           <h2 className="single-product-title">{Product.name}</h2>
-          <h3 className="single-product-rating">* * * * *</h3>
+          <div className="single-product-rating">
+            <StarRating rating={Product.rating} />
+          </div>
           <p className="single-product-description">{Product.description}</p>
           <h2 className="single-product-price">{formatMoney(Product.price)}</h2>
           <div className="purchase-options">
@@ -58,6 +63,10 @@ export default function ProductPage({ id }) {
             <CartBtn>+ Add to Cart</CartBtn>
           </div>
         </div>
+      </div>
+      <div className="more-buying-options container-inner">
+        <h2 className="section-title">More Buying Options</h2>
+        <ProductTrack category={Product.category} />
       </div>
     </>
   );
