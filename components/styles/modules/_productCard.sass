@@ -1,0 +1,69 @@
+.product-card
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+  padding: clamp(1rem, 2vw, 2rem)
+  border-radius: 0.5em
+  box-shadow: 0 0 20px $transparent-gray
+
+.product-image-wrapper
+  height: 50%
+  overflow-x: hidden
+  border-radius: 0.5em
+
+.product-image
+  display: block
+  width: 100%
+  height: 100%
+  cursor: pointer
+  object-fit: cover
+
+.card-content
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+
+.product-category
+  font-size: clamp(1rem, 0.5em + 2vw, 1.5rem)
+  margin: 1em 0
+  text-transform: capitalize
+
+.product-title
+  font-size: clamp(1.8rem, 0.5em + 3vw, 2.4rem)
+
+.title-link
+  color: $black
+  text-decoration: none
+  border-bottom: 2px solid transparent
+  transition: $tr
+  &:hover
+    border-bottom-color: $black
+
+.product-description
+  margin: $productMargin 0
+  font-size: clamp(1.2rem, 0.3em + 2vw, 1.5rem)
+  line-height: 1.4
+
+.bottom-row
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: center
+  font-size: clamp(1rem, 0.5em + 2vw, 1.8rem)
+
+.cardBtn
+  font-size: 0.6em
+
+.product-btn
+  text-transform: uppercase
+  padding: 0.5em 1em
+  cursor: pointer
+  border: 2px solid $darkblue
+  color: $offwhite
+  background-color: $darkblue
+  font-weight: 600
+  border-radius: 0.35em
+  transition: $tr
+  &:hover
+    color: $darkblue
+    background-color: white
