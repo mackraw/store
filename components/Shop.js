@@ -27,7 +27,7 @@ export default function Shop() {
   return (
     <>
       <div>Shopping time hero</div>
-      <div className="products-list">
+      <div className="products-list container-outer">
         {data.allProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}
