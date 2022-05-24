@@ -23,7 +23,7 @@ const SIMILAR_PRODUCTS_QUERY = gql`
   }
 `;
 
-export default function ProductTrack({ category }) {
+export default function ProductTrack({ category, ownerId }) {
   const { data, error, loading } = useQuery(SIMILAR_PRODUCTS_QUERY, {
     variables: {
       category,
@@ -31,15 +31,20 @@ export default function ProductTrack({ category }) {
   });
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="product-track">
-      {data.allProducts.map((product) => (
-        <TrackCard key={product.id} product={product} />
-      ))}
+      {data.allProducts
+        .filter((item) => item.id !== ownerId)
+        .slice(0, 3)
+        .map((product) => (
+          <TrackCard key={product.id} product={product} />
+        ))}
     </div>
   );
 }
 
 ProductTrack.propTypes = {
   category: propTypes.string,
+  ownerId: propTypes.string,
 };

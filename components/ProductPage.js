@@ -66,7 +66,7 @@ export default function ProductPage({ id }) {
       </div>
       <div className="more-buying-options container-inner">
         <h2 className="section-title">More Buying Options</h2>
-        <ProductTrack category={Product.category} />
+        <ProductTrack category={Product.category} ownerId={Product.id} />
       </div>
     </>
   );
