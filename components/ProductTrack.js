@@ -23,6 +23,16 @@ const SIMILAR_PRODUCTS_QUERY = gql`
   }
 `;
 
+function isHorizontallyScrollable(el) {
+  const x1 = el.scrollLeft;
+  el.scrollLeft += 1;
+  const x2 = el.scrollLeft;
+  el.scrollLeft -= 1;
+  const x3 = el.scrollLeft;
+  el.scrollLeft = x1;
+  return x1 !== x2 || x2 !== x3;
+}
+
 export default function ProductTrack({ category, ownerId }) {
   const { data, error, loading } = useQuery(SIMILAR_PRODUCTS_QUERY, {
     variables: {
