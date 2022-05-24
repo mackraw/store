@@ -14,8 +14,8 @@ export default function StarRating({ numStars = 5, rating }) {
   return (
     <>
       {createArray(numStars).map((n, i) => (
-        <span className="star-container">
-          <Star key={i} selected={stars > i} onSelect={() => setStars(i + 1)} />
+        <span key={i} className="star-container">
+          <Star selected={stars > i} onSelect={() => setStars(i + 1)} />
         </span>
       ))}
       <p className="star-rating-description">
