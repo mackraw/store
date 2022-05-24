@@ -1,5 +1,9 @@
 // Site header
 
+.site-header
+  background-color: $white
+  box-shadow: 0 0.2em 0.2em hsla(0, 0%, 0%, 0.2)
+
 .burger-btn,
 .cart,
 .nav-search
@@ -24,6 +28,7 @@
   @media (max-width: 767px)
     visibility: hidden
     height: 100vh
+    min-width: 38%
     background: $offwhite
     position: absolute
     top: 0
@@ -37,6 +42,7 @@
       margin-top: 6em
       height: calc(100% - 6em)
       flex-flow: column
+      justify-content: space-around
   .nav-link
     font-size: 1.5em
     color: $darkblue
@@ -47,13 +53,17 @@
     &:visited
       color: $darkblue
     @media (max-width: 767px)
-      padding: 2em
-      margin: 1em
+      padding: 2rem
+      margin: 1rem
+      font-size: clamp(1.4rem, 5vh, 3rem)
+  .nav-item
+    @media (max-width: 767px)
+      margin: 0 auto
 
 .overlay
   visibility: hidden
   transition: all 200ms ease-in
-  position: absolute
+  position: fixed
   background: hsla(0, 0%, 0%, 0.5)
   top: 0
   bottom: 0

@@ -16,6 +16,7 @@ export default function Header() {
       const nav = document.querySelector('.nav');
       nav.classList.toggle('is-showing');
       document.querySelector('.overlay').classList.toggle('is-showing');
+      document.body.classList.toggle('disable-scroll');
     }
   };
 
