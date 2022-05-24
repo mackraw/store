@@ -1,27 +1,47 @@
+$defaultVerticalMargin: clamp(1.6rem, 4vw, 2.4rem)
+$smallVerticalMargin: clamp(0.9rem, 2vw, 1.2rem)
+
 .single-product-buy-container
   display: flex
   flex-flow: row wrap
-  margin-top: 2vw
+  margin: 4vw 0
+
 .single-product-image
   width: calc(50% - 1em)
   border-radius: 0.5em
   @media (min-width: 767px)
     width: calc(50% - 1em)
     margin-right: 1em
-.single-product-price
-  font-size: 2em
-  margin: 2rem 0
+
 .single-product-details
   width: 50%
   @media (min-width: 767px)
     width: calc(50% - 1em)
     margin-left: 1em
 .single-product-category
+  display: inline-block
+  margin-bottom: $smallVerticalMargin
+  padding: 0.4em 0.5em
+  border-radius: 0.25em
   font-size: clamp(1rem, 0.5em + 1vw, 1.4rem)
+  letter-spacing: 0.075em
+  background-color: $darkblue
+  color: $offwhite
 .single-product-title
   font-size: clamp(1.8rem, 0.5em + 3vw, 2.4rem)
-  margin: 0.33em 0
-.single-product-qty
-  margin: 2rem 0
+  margin-bottom: $defaultVerticalMargin
+.single-product-rating
+  margin-bottom: $defaultVerticalMargin
+  font-size: 1.5em
 .single-product-description
+  line-height: 1.6
+  margin-bottom: $defaultVerticalMargin
   font-size: clamp(1.2rem, 0.3em + 2vw, 1.5rem)
+.single-product-price
+  font-size: 2em
+  margin-bottom: $defaultVerticalMargin
+.single-product-qty
+  margin-bottom: $defaultVerticalMargin
+
+.more-buying-options
+  margin-bottom: $defaultVerticalMargin
