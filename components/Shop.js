@@ -26,7 +26,15 @@ export default function Shop() {
   if (error) return <p>Error: {error.message}</p>;
   return (
     <>
-      <div>Shopping time hero</div>
+      <div className="shopping-hero">
+        <div className="shopping-hero-text container-inner">
+          <h2 className="shopping-hero-title">Get ready for some fun!</h2>
+          <p className="shopping-hero-subtitle">
+            Browse our collection of home goods! Add them to your cart, rate
+            them, enjoy them.
+          </p>
+        </div>
+      </div>
       <div className="products-list container-outer">
         {data.allProducts.map((product) => (
           <Product key={product.id} product={product} />
