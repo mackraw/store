@@ -1,3 +1,5 @@
+import ComingSoon from '../components/ComingSoon';
+
 export default function LoginPage() {
-  return <p>Howdy from Login</p>;
+  return <ComingSoon />;
 }

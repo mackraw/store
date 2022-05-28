@@ -1,0 +1,25 @@
+.coming-soon
+  min-height: calc(100vh - $siteHeaderHeight - $preFooterPadding)
+  position: relative
+  &-text
+    position: absolute
+    top: 50%
+    margin: 0 auto
+    transform: translateY(-50%)
+    width: 100%
+    text-align: center
+    line-height: 1.6
+  &-title
+    font-size: clamp(2rem, 4vw, 8rem)
+    margin-bottom: 0.66em
+  &-para
+    font-size: clamp(1.4rem, 1vw, 4rem)
+    margin-bottom: 0.66em
+  &-link, &-link:active, &-link:visited
+    color: inherit
+    text-decoration: none
+    border-bottom: 1px solid $darkblue
+    transition: $tr
+    &:hover
+      border-bottom: 1px solid $blue-900
+      color: $blue-900
