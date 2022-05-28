@@ -1,0 +1,96 @@
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  background-color: $blue-300
+  padding-top: 8vw
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-evenly
+  &-row
+    display: flex
+    flex-flow: row wrap
+  &-wide-column
+    flex: 3 0 50%
+    @media (max-width: 767px)
+      min-width: 100%
+      margin-bottom: 2em
+  &-narrow-column
+    flex: 1 0 25%
+    @media (max-width: 767px)
+      min-width: 50%
+      margin-bottom: 3em
+
+.newsletter
+  min-height: 50%
+  margin-bottom: 3em
+  &-title
+    font-size: clamp(2rem, 5vw, 6rem)
+    font-weight: 600
+    margin-bottom: 0.5em
+
+.input-item
+  font-size: clamp(1.1rem, 1.75vw, 1.6rem)
+  input
+    margin: 0.5em 0
+    padding: 0.5em
+    border: 2px solid transparent
+    border-radius: 0.25em
+    font-family: Poppins
+    vertical-align: middle
+  input[type="text"]
+    display: block
+    width: 80%
+    &:focus, &:active
+      border: 2px solid red
+  input[type="checkbox"]
+    margin-right: 0.5em
+  .agree-terms
+    font-size: 0.85em
+
+.social
+  min-height: 50%
+  margin-bottom: 3em
+.social-icons
+
+.social-icon
+  display: inline-block
+  font-size: clamp(1.6rem, 2.5vw, 4rem)
+  padding-right: 1em
+  &:hover
+    cursor: pointer
+    & *
+      transition: $tr
+      fill: $blue-700
+
+.footer-list
+  // margin-bottom: 2em
+.list-title
+  font-size: clamp(1.6rem, 3vw, 3rem)
+  font-weight: 600
+  padding-bottom: 0.7em
+
+.footer-list-item
+  font-size: clamp(1.1rem, 1.5vw, 1.6rem)
+  padding-bottom: 0.95em
+
+.footer-list-link
+  color: inherit
+  text-decoration: none
+  border-bottom: 2px solid transparent
+  transition: $tr
+  &:hover
+    border-bottom-color: inherit
+
+.site-map
+  padding-bottom: 3em
+
+.brand
+  align-self: center
+  margin-bottom: clamp(2rem, 2vw ,5rem)
+  font-size: clamp(4rem, 14vw, 20rem)
+.copy
+  font-size: clamp(1.1rem, 1.35vw, 1.6rem)
+  align-self: center
+  margin: 1em
