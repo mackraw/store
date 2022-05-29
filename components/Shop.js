@@ -1,7 +1,9 @@
 import { gql } from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import Product from './ProductCard';
-import Message from './Message';
+import Loading from './Loading';
+import Error from './Error';
+import Hero from './Hero';
 
 const ALL_PRODUCTS_QUERY = gql`
   query {
@@ -23,20 +25,16 @@ const ALL_PRODUCTS_QUERY = gql`
 
 export default function Shop() {
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
-  if (loading) return <Message messageType="loading" />;
-  if (error)
-    return <Message messageType="error">Error: {error.message}</Message>;
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
   return (
     <>
-      <div className="shopping-hero">
-        <div className="shopping-hero-text container-inner">
-          <h2 className="shopping-hero-title">Get ready for some fun!</h2>
-          <p className="shopping-hero-subtitle">
-            Browse our collection of home goods! Add them to your cart, rate
-            them, enjoy them.
-          </p>
-        </div>
-      </div>
+      <Hero
+        title="Get ready for some fun!"
+        subtitle="Browse our collection of home goods! Add them to your cart, rate them, enjoy them."
+        heroStyles="shopping-hero"
+        textStyles="shopping-hero-text"
+      />
       <div className="products-list container-outer">
         {data.allProducts.map((product) => (
           <Product key={product.id} product={product} />

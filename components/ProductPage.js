@@ -4,7 +4,8 @@ import Head from 'next/head';
 import propTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney';
 import CartBtn from './CartBtn';
-import Message from './Message';
+import Error from './Error';
+import Loading from './Loading';
 import ProductTrack from './ProductTrack';
 import QuantityControl from './QuantityControl';
 import StarRating from './StarRating';
@@ -36,8 +37,8 @@ export default function ProductPage({ id }) {
       id,
     },
   });
-  if (loading) return <Message messageType="loading" />;
-  if (error) return <Message messageType="error"> error={error}</Message>;
+  if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
   const { Product } = data;
   console.log(Product);
   return (
