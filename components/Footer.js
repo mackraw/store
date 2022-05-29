@@ -32,19 +32,23 @@ export default function Footer() {
             <h3 className="list-title">Follow Us</h3>
             <div className="social-icons">
               <span className="social-icon">
-                <Link href="#" target="_blank">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaInstagramSquare />
-                </Link>
+                </a>
               </span>
               <span className="social-icon">
-                <Link href="#" target="_blank">
+                <a href="https://facebook.com" target="_blank" rel="noreferrer">
                   <FaFacebookSquare />
-                </Link>
+                </a>
               </span>
               <span className="social-icon">
-                <Link href="#" target="_blank">
+                <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <FaTwitterSquare />
-                </Link>
+                </a>
               </span>
             </div>
           </div>
