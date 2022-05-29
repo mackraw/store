@@ -1,6 +1,7 @@
 import { gql } from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import Product from './ProductCard';
+import Message from './Message';
 
 const ALL_PRODUCTS_QUERY = gql`
   query {
@@ -22,8 +23,9 @@ const ALL_PRODUCTS_QUERY = gql`
 
 export default function Shop() {
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <Message messageType="loading" />;
+  if (error)
+    return <Message messageType="error">Error: {error.message}</Message>;
   return (
     <>
       <div className="shopping-hero">

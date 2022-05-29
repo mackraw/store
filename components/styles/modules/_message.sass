@@ -1,0 +1,35 @@
+.message
+  min-height: calc(100vh - $siteHeaderHeight - $preFooterPadding)
+  position: relative
+  &::before
+    content: ""
+    height: 1em
+    display: block
+  &-content
+    position: absolute
+    top: 10%
+    width: 100%
+    text-align: center
+    line-height: 1.6
+    padding: 2em
+    font-size: clamp(1.2rem, 1vw, 3rem)
+
+.error .message-content
+  padding: 2rem
+  margin: 0 5vw
+  max-width: 90vw
+
+.error::before
+  background-image: linear-gradient(90deg, transparent 0%, $red 50%, transparent 100%)
+
+.loading::before
+  background-image: linear-gradient(90deg, transparent 0%, $blue-900 50%, transparent 100%)
+  background-repeat: no-repeat
+  background-size: 55%
+  animation: activeLoading 500ms ease-in-out alternate infinite
+
+@keyframes activeLoading
+  from
+    background-position: 0 0
+  to
+    background-position: 100% 0

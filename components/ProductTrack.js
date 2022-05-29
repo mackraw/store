@@ -2,6 +2,7 @@ import { gql } from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import propTypes from 'prop-types';
 import TrackCard from './TrackCard';
+import Message from './Message';
 
 const SIMILAR_PRODUCTS_QUERY = gql`
   query SIMILAR_PRODUCTS_QUERY($category: String!) {
@@ -40,7 +41,8 @@ export default function ProductTrack({ category, ownerId }) {
     },
   });
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error)
+    return <Message messageType="error">Error: {error.message}</Message>;
 
   return (
     <div className="product-track">
