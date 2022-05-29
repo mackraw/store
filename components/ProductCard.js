@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import propTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney';
 import CartBtn from './CartBtn';
 
@@ -10,7 +11,7 @@ export default function ProductCard({ product }) {
           <a>
             <img
               className="product-image"
-              src={product?.photo?.image?.publicUrlTransformed}
+              src={product.photo.image.publicUrlTransformed}
               alt={product.name}
             />
           </a>
@@ -32,3 +33,7 @@ export default function ProductCard({ product }) {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  product: propTypes.object,
+};
