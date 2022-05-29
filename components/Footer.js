@@ -5,6 +5,11 @@ import {
   FaInstagramSquare,
   FaTwitterSquare,
 } from 'react-icons/fa';
+import { BiChevronsRight } from 'react-icons/bi';
+
+function handleSubscribe(e) {
+  e.preventDefault();
+}
 
 export default function Footer() {
   useEffect(() => {
@@ -17,36 +22,58 @@ export default function Footer() {
         <div className="footer-wide-column">
           <div className="newsletter">
             <h3 className="newsletter-title">Stay Informed!</h3>
-            <div className="input-item">
-              <label htmlFor="email">Your email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div className="input-item">
-              <input type="checkbox" name="terms" id="terms" />
-              <label htmlFor="terms" className="agree-terms">
-                I agree with privacy policy and terms of use.
-              </label>
-            </div>
+            <form method="POST">
+              <div className="input-item">
+                <label htmlFor="email">Your email</label>
+                <div className="input-box">
+                  <input type="text" name="email" id="email" />
+                  <button
+                    type="submit"
+                    onSubmit={handleSubscribe}
+                    className="btn"
+                  >
+                    <BiChevronsRight />
+                  </button>
+                </div>
+              </div>
+              <div className="input-item">
+                <input type="checkbox" name="terms" id="terms" />
+                <label htmlFor="terms" className="agree-terms">
+                  I agree with privacy policy and terms of use.
+                </label>
+              </div>
+            </form>
           </div>
           <div className="social">
             <h3 className="list-title">Follow Us</h3>
-            <div className="social-icons">
-              <span className="social-icon">
+            <div>
+              <span className="icon-wrapper">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
+                  className="icon"
                 >
                   <FaInstagramSquare />
                 </a>
               </span>
-              <span className="social-icon">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <span className="icon-wrapper">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon"
+                >
                   <FaFacebookSquare />
                 </a>
               </span>
-              <span className="social-icon">
-                <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <span className="icon-wrapper">
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon"
+                >
                   <FaTwitterSquare />
                 </a>
               </span>

@@ -41,31 +41,48 @@
     vertical-align: middle
   input[type="text"]
     display: block
-    width: 80%
+    width: 100%
     &:focus, &:active
       border: 2px solid red
   input[type="checkbox"]
     margin-right: 0.5em
   .agree-terms
     font-size: 0.85em
+  .input-box
+    width: 80%
+    display: flex
+    position: relative
+    .btn
+      position: absolute
+      font-size: 1.5em
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      background-color: transparent
+      border: none
+      cursor: pointer
+      & > *
+        vertical-align: middle
+        transition: $tr
+        &:hover
+          border-radius: 0.15em
+          background-color: $blue-300
 
 .social
   min-height: 50%
   margin-bottom: 3em
-.social-icons
+  .icon-wrapper
+    display: inline-block
+    font-size: clamp(1.6rem, 2.5vw, 4rem)
+    padding-right: 1em
+    &:hover
+      cursor: pointer
+      & *
+        transition: $tr
+        fill: $blue-500
+  .icon
+    color: $darkblue
 
-.social-icon
-  display: inline-block
-  font-size: clamp(1.6rem, 2.5vw, 4rem)
-  padding-right: 1em
-  &:hover
-    cursor: pointer
-    & *
-      transition: $tr
-      fill: $blue-700
-
-.footer-list
-  // margin-bottom: 2em
 .list-title
   font-size: clamp(1.6rem, 3vw, 3rem)
   font-weight: 600
