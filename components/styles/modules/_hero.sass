@@ -1,0 +1,30 @@
+.hero
+  min-height: 66vh
+  height: auto
+  overflow-x: hidden
+  background-repeat: no-repeat
+  background-size: cover
+  position: relative
+  margin-bottom: 6rem
+  &::before
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    pointer-events: none
+    top: 50vh
+    background: linear-gradient(-180deg, transparent, $white)
+  .text
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    text-shadow: 0 0 1em $white
+  .title
+    font-size: clamp(2.8rem, 0.5em + 4vw, 5rem)
+    font-weight: 600
+    letter-spacing: 0.05em
+    margin-bottom: clamp(2rem, 0.75em, 2rem)
+  .subtitle
+    font-size: clamp(1.6rem, 0.5em + 1.45vw, 3rem)
+    line-height: 1.6

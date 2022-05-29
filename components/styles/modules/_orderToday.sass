@@ -1,0 +1,26 @@
+.order-today
+  .options
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+    .btn
+      padding: 4em
+      font-size: clamp(1.2rem, 2vw, 1.8rem)
+      color: $darkblue
+      text-decoration: none
+      background-color: $blue-300
+      border-radius: 0.5em
+      transition: $tr
+      &:hover
+        background-color: $darkblue
+        color: $offwhite
+        & .graphic
+          stroke: $offwhite
+      .graphic-wrapper
+        padding: 1em
+        .graphic
+          font-size: 1.5em
+          vertical-align: middle
+          & .btn:hover
+
+      .text
