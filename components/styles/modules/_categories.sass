@@ -1,0 +1,24 @@
+.categories
+  padding: clamp(1rem, 3vw, 3rem) 0
+  .list
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    & :not(:last-child)
+      margin-right: 1em
+    .item
+      background-color: $blue-300
+      border-radius: 0.5em
+      overflow: hidden
+      margin-top: 1em
+      margin-bottom: 1em
+      transition: $tr
+      &:hover
+        color: $white
+        background-color: $darkblue
+      .link
+        display: inline-block
+        padding: 1em
+        font-size: clamp(1.2rem, 1.5vw, 1.6rem)
+        text-decoration: none
+        color: inherit
